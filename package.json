@@ -1,0 +1,30 @@
+{
+  "name": "local-press",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamieLivingstone/LocalPress.git"
+  },
+  "author": "Jamie Livingstone <Jamie.Livingstone@outlook.com> (http://jamielivingstone.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamieLivingstone/LocalPress/issues"
+  },
+  "homepage": "https://github.com/JamieLivingstone/LocalPress#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "colors": "^1.1.2",
+    "yargs": "^7.0.2"
+  }
+}
