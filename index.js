@@ -1,17 +1,14 @@
 #!/usr/bin/env node
-var yargs = require('yargs');
-var path = require('path');
+const yargs = require('yargs');
+const path = require('path');
 require('colors');
 
 // Utility functions
-var createConfig = require('./lib/configuration');
-var doRun = require('./lib/run');
-
-// Global root path
-global.appRoot = path.resolve(process.cwd());
+const createConfig = require('./lib/configuration');
+const doRun = require('./lib/run');
 
 // CLI options
-var argv = yargs
+const argv = yargs
     .command({
         command: 'config',
         aliases: ['configure', 'cfg', 'c'],
@@ -37,13 +34,10 @@ var argv = yargs
                 describe: 'Save images to local directory',
                 demand: false,
                 alias: 'i'
-            },
-            handler: function (argv) {
-                doRun(argv.images);
             }
         },
         handler: function (argv) {
-            createConfig(argv.path, argv.url);
+            doRun(argv.images);
         }
     })
 
@@ -58,7 +52,7 @@ var argv = yargs
     .argv;
 
 // Show help in case localpress is run without a command or with an unrecognized command
-var userCommand = argv._[0];
+const userCommand = argv._[0];
 if (!userCommand || !/^c(fg)?$|^config$|^r(un)?$/i.test(userCommand)) {
     console.log('Welcome to LocalPress. Here is a list of supported commands:\n'.green);
     yargs.showHelp();

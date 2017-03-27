@@ -1,0 +1,7 @@
+{
+  "url": "http://92.60.127.189/~theme/StocksHall/wp-json/",
+  "routes": {
+    "pages": "wp/v2/pages",
+    "posts": "wp/v2/posts"
+  }
+}
