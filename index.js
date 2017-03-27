@@ -5,9 +5,10 @@ require('colors');
 
 // Utility functions
 var createConfig = require('./lib/configuration');
+var doRun = require('./lib/run');
 
 // Global root path
-global.appRoot = path.resolve(__dirname);
+global.appRoot = path.resolve(process.cwd());
 
 // CLI options
 var argv = yargs
@@ -16,15 +17,29 @@ var argv = yargs
         aliases: ['configure', 'cfg', 'c'],
         desc: 'Configure LocalPress options',
         builder: {
-            path: {
-                describe: 'Specify custom folder to save data into, the default value is "localpress" in the root of the project',
-                demand: false,
-                alias: 'p'
-            },
             url: {
                 describe: 'URL of website with Wordpress REST installed (e.g. http://mysite.com)',
                 demand: true,
                 alias: 'u'
+            }
+        },
+        handler: function (argv) {
+            createConfig(argv.url);
+        }
+    })
+
+    .command({
+        command: 'run',
+        aliases: ['run', 'r'],
+        desc: 'Get all WordPress pages, posts and media',
+        builder: {
+            images: {
+                describe: 'Save images to local directory',
+                demand: false,
+                alias: 'i'
+            },
+            handler: function (argv) {
+                doRun(argv.images);
             }
         },
         handler: function (argv) {
