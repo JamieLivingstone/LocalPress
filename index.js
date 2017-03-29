@@ -34,10 +34,15 @@ const argv = yargs
                 describe: 'Save images to local directory',
                 demand: false,
                 alias: 'i'
+            },
+            chunk: {
+                describe: 'Seperate data into seperate files e.g. pages.json, posts.json',
+                demand: false,
+                aliases: 'chunk'
             }
         },
         handler: function (argv) {
-            doRun(argv.images);
+            doRun(argv.images, argv.chunk);
         }
     })
 
