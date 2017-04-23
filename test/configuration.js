@@ -28,11 +28,13 @@ describe('config', function () {
         })
     });
 
-    it('should give an error when a valid url passed but website is unreachable.', function (done) {
-        exec('node', [index, 'config', `-u http://foobarbuzz.com`], function (err, stdout) {
+    it('should give an error when a valid url passed but website is ', function (done) {
+        exec('node', [index, 'config', `-u foobarbuzz.com`], function (err, stdout) {
             if(err) throw err;
             expect(stdout).to.match(/Error connecting to the URL provided/);
             done();
         })
     })
+
+
 });
