@@ -1,5 +1,3 @@
 {
-  "pages": "wp/v2/pages",
-  "posts": "wp/v2/posts",
-  "media": "wp/v2/media"
+  "root": "/"
 }

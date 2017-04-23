@@ -12,10 +12,10 @@ const argv = yargs
     .command({
         command: 'config',
         aliases: ['configure', 'cfg', 'c'],
-        desc: 'Configure LocalPress options',
+        desc: 'Configure url options',
         builder: {
             url: {
-                describe: 'URL of website with Wordpress REST installed (e.g. http://mysite.com)',
+                describe: 'URL of website with JSON data',
                 demand: true,
                 alias: 'u'
             }
@@ -36,7 +36,7 @@ const argv = yargs
                 alias: 'i'
             },
             chunk: {
-                describe: 'Seperate data into seperate files e.g. pages.json, posts.json',
+                describe: 'Separate data into multiple files e.g. pages.json, posts.json',
                 demand: false,
                 aliases: 'chunk'
             }
@@ -47,7 +47,7 @@ const argv = yargs
     })
 
     .version(function () {
-        return 'LocalPress v' + require('./package.json').version.gray;
+        return 'json-download v' + require('./package.json').version.gray;
     })
 
     .alias('v', 'version')
@@ -56,9 +56,8 @@ const argv = yargs
     .help()
     .argv;
 
-// Show help in case localpress is run without a command or with an unrecognized command
 const userCommand = argv._[0];
 if (!userCommand || !/^c(fg)?$|^config$|^r(un)?$/i.test(userCommand)) {
-    console.log('Welcome to LocalPress. Here is a list of supported commands:\n'.green);
+    console.log('Welcome to json-download. Here is a list of supported commands:\n'.green);
     yargs.showHelp();
 }

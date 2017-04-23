@@ -1,7 +1,7 @@
 {
-  "name": "local-press",
+  "name": "json-download",
   "version": "1.0.0",
-  "description": "",
+  "description": "Download JSON data and parse responses.",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -10,7 +10,7 @@
     "test": "mocha"
   },
   "bin": {
-    "localpress": "index.js"
+    "jsondl": "index.js"
   },
   "repository": {
     "type": "git",
