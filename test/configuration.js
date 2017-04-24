@@ -6,9 +6,9 @@ const mockApi = 'http://google.com';
 
 describe('config', function () {
     it('when given an invalid url to throw an error', function (done) {
-        exec('node',[index, 'config', '-u foo'], function (err, stdout) {
+        exec('node',[index, 'config', '-u fgfg@'], function (err, stdout) {
             if(err) { throw err; }
-            expect(stdout).to.match(/Website URL invalid, please enter url in the format/);
+            expect(stdout).to.match(/Error connecting to the URL provided/);
             done();
         });
     });
@@ -17,14 +17,6 @@ describe('config', function () {
         exec('node',[index, 'config', `-u ${mockApi}`], function (err, stdout) {
             if(err) { throw err; }
             expect(stdout).to.match(/Testing the url for a response/);
-            done();
-        });
-    });
-
-    it('should give an error when passed an invalid url', function (done) {
-        exec('node', [index, 'config', `-u bar`], function (err, stdout) {
-            if(err) { throw err; }
-            expect(stdout).to.match(/Website URL invalid, please enter url in the format/);
             done();
         });
     });
