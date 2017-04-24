@@ -1,5 +1,5 @@
 {
-  "name": "json-download",
+  "name": "local-json",
   "version": "1.0.0",
   "description": "Download JSON data and parse responses.",
   "main": "index.js",
