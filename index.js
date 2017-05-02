@@ -18,10 +18,15 @@ const argv = yargs
                 describe: 'URL of website with JSON data',
                 demand: true,
                 alias: 'u'
+            },
+            routes: {
+                describe: 'A comma separated list of routes. e.g: home: /, posts: /posts, news: /news/',
+                demand: false,
+                alias: 'r'
             }
         },
         handler: function (argv) {
-            createConfig(argv.url);
+            createConfig(argv.url, argv.routes);
         }
     })
 
@@ -43,7 +48,7 @@ const argv = yargs
             chunk: {
                 describe: 'Separate data into multiple files e.g. pages.json, posts.json',
                 demand: false,
-                aliases: 'chunk'
+                alias: 'c'
             }
         },
         handler: function (argv) {
