@@ -2,29 +2,44 @@
 const expect = require('chai').expect;
 const exec = require('child_process').execFile;
 const index = './index.js';
-const mockApi = 'http://google.com';
 
 describe('config', function () {
-    it('when given an invalid url to throw an error', function (done) {
-        exec('node',[index, 'config', '-u fgfg@'], function (err, stdout) {
-            if(err) { throw err; }
+   // Test for invalid URLs
+    it('should throw an error when given an invalid url', function (done) {
+        exec('node', [index, 'config', '-u fgfg@'], function (err, stdout) {
+            if (err) {
+                throw err;
+            }
             expect(stdout).to.match(/Error connecting to the URL provided/);
             done();
         });
     });
 
-    it('when given a valid url to show saving message', function (done) {
-        exec('node',[index, 'config', `-u ${mockApi}`], function (err, stdout) {
-            if(err) { throw err; }
-            expect(stdout).to.match(/Testing the url for a response/);
+    // Connect valid URLs
+    it('should connect when URL is valid', function (done) {
+        exec('node', [index, 'config', '-u google.com'], function (err, stdout) {
+            if (err) {
+                throw err;
+            }
+            expect(stdout).to.match(/Testing the URL for a response/);
             done();
         });
     });
 
-    it('should give an error when a valid url passed but website is unreachable', function (done) {
-        exec('node', [index, 'config', `-u www.foobarbuzz.com`], function (err, stdout) {
+    // Error for invalid routes
+    it('should display errors for invalid routes', function (done) {
+        exec('node', [index, 'config', '-u google.com', '-r foo:bar'], function (err, stdout) {
             if(err) { throw err; }
-            expect(stdout).to.match(/Error connecting to the URL provided/);
+            expect(stdout).to.match(/Invalid routes detected! Enter routes in the format/);
+            done();
+        });
+    });
+
+    // Connect with valid Routes
+    it('should test url if routes are valid', function (done) {
+        exec('node', [index, 'config', '-u google.com', '-r foo:bar'], function (err, stdout) {
+            if(err) { throw err; }
+            expect(stdout).to.match(/Invalid routes detected! Enter routes in the format/);
             done();
         });
     });
