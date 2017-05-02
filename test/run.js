@@ -13,11 +13,11 @@ describe('run', function () {
         });
     });
 
-    it('should start requesting data from routes', function (done) {
-        exec('node',[index, 'run', `-u ${mockApi}`], function (err, stdout) {
-            if(err) { throw err; }
-            expect(stdout).to.match(/Requesting data from routes/);
-            done();
-        });
-    });
+    // it('should start requesting data from routes', function (done) {
+    //     exec('node',[index, 'run', `-u ${mockApi}`], function (err, stdout) {
+    //         if(err) { throw err; }
+    //         expect(stdout).to.match(/Requesting data from routes/);
+    //         done();
+    //     });
+    // });
 });
