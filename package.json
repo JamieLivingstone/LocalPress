@@ -4,7 +4,7 @@
   "description": "LocalPress is a command tool to store your JSON objects and images offline from a given URL and routes.",
   "main": "index.js",
   "directories": {
-    "test": "tests"
+    "test": "test"
   },
   "scripts": {
     "test": "mocha"
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/JamieLivingstone/LocalPress#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "jest": "^20.0.1",
     "mocha": "^3.2.0"
   },
   "dependencies": {
