@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 'use strict';
 const yargs = require('yargs');
+const GLOBALS = require('./globals');
+const {createFolder} = require('./lib/helpers');
 require('colors');
 
 // Utility functions
@@ -26,6 +28,7 @@ const argv = yargs
             }
         },
         handler: function (argv) {
+            createFolder('LocalPress');
             createConfig(argv.url, argv.routes);
         }
     })
@@ -33,10 +36,10 @@ const argv = yargs
     .command({
         command: 'run',
         aliases: ['run', 'r'],
-        desc: 'Get all WordPress pages, posts and media',
+        desc: `Run ${GLOBALS.name} downloader`,
         builder: {
             url: {
-                describe: 'URL of website with JSON data',
+                describe: 'URL of the website',
                 demand: false,
                 alias: 'u'
             },
@@ -57,7 +60,7 @@ const argv = yargs
     })
 
     .version(function () {
-        return 'LocalJSON v' + require('./package.json').version.gray;
+        return `${GLOBALS.name} v` + require('./package.json').version.gray;
     })
 
     .alias('v', 'version')
@@ -68,6 +71,6 @@ const argv = yargs
 
 const userCommand = argv._[0];
 if (!userCommand || !/^c(fg)?$|^config$|^r(un)?$/i.test(userCommand)) {
-    console.log('Welcome to LocalJSON. Here is a list of supported commands:\n'.green);
+    console.log(`Welcome to ${GLOBALS.name}. Here is a list of supported commands:\n`.green);
     yargs.showHelp();
 }
