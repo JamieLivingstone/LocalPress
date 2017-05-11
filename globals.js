@@ -1,5 +1,6 @@
-const Globals = {
-    name: 'LocalPress',
-    outputFolder: `${this.name}/`,
-    imageFolder: `${this.outputFolder}/images/`
+const projectName = 'LocalPress';
+
+module.exports = {
+    name: projectName,
+    imageFolder: `./${projectName}/images/`
 };
