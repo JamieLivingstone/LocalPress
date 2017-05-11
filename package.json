@@ -1,7 +1,7 @@
 {
-  "name": "local-json",
+  "name": "local-press",
   "version": "1.0.0",
-  "description": "Download JSON data and parse responses.",
+  "description": "LocalPress is a command tool to store your JSON objects and images offline from a given URL and routes.",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -29,7 +29,7 @@
   "dependencies": {
     "axios": "^0.15.3",
     "colors": "^1.1.2",
-    "ramda": "^0.23.0",
+    "image-downloader": "^3.2.1",
     "rimraf": "^2.6.1",
     "yargs": "^7.0.2"
   }
