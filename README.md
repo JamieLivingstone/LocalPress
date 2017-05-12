@@ -11,10 +11,10 @@ LocalPress is a command line tool to store your JSON APIs and images offline.
 
 - During development somebody is working on the backend constantly changing data and throwing syntax errors/debug statements
 
-- Better performance by using local data it reduces the server loads load as it does not need to run a database query on each request.
+- Improve users performance and reduce server load. Do you really need to be pulling all that data from the database on every request?
 
 ## Installation 
-LocalPress requires Node.js vCURRENTLY TESTING to run.
+LocalPress has only been tested in node v7 currently.
 
 ```js
 npm install -g localpress
