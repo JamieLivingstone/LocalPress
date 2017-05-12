@@ -5,14 +5,16 @@ LocalPress is a command line tool to store your JSON APIs and images offline.
 
 **Example use cases**
 
-- You are running an API to feed data to the front-end of your application but the data does not change frequently (Blog, news, featured products, football results etcseparatehis route through LocalPress and you then have a static JSON object which results in faster performance and less server resources due to the database not needing to run the query on each request.
+- You are running an API to feed data to the front-end of your application but the data does not change frequently (Blog, news, featured products, football results etc)
 
 - You using a public API that has a daily request limit
 
 - During development somebody is working on the backend constantly changing data and throwing syntax errors/debug statements
 
+- Better performance by using local data it reduces the server loads load as it does not need to run a database query on each request.
+
 ## Installation 
-LocalPress requires Node.js v6.0.0 to run.
+LocalPress requires Node.js vCURRENTLY TESTING to run.
 
 ```js
 npm install -g localpress
