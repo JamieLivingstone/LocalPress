@@ -13,7 +13,7 @@ LocalPress is a command line tool to store your JSON APIs and images offline.
 
 - Improve users performance and reduce server load. Do you really need to be pulling all that data from the database on every request?
 
-## Installation 
+## Installation
 LocalPress has only been tested in node v7 currently.
 
 ```js
@@ -35,7 +35,7 @@ localpress --version
 
 ##### Show help
 ```js
-localpress -h 
+localpress -h
 localpress --help
 ```
 
@@ -81,12 +81,4 @@ localpress run --chunk --images // will output two files home.json, aboutUs.json
 ## Examples
 
 ### Football API
-setup config adding routes for the index, premier league teams and fixtures
-```js
-localpress config --url "http://api.football-data.org/v1/competitions" --routes "root@/, plTeams@/427/teams, plFixtures@/competitions/427/fixtures"
-```
-
-Run with --images (to save images) and --chunk (to save each route separate)
-```js
-localpress run --images --chunk
-```
+Coming soon!
