@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-
 'use strict';
+
 const yargs = require('yargs');
 const GLOBALS = require('./globals');
 const {createFolder} = require('./lib/helpers');
