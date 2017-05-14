@@ -1,6 +1,6 @@
 {
   "name": "localpress",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "LocalPress is a command tool to store your JSON objects and images offline from a given URL and routes.",
   "main": "index.js",
   "directories": {
